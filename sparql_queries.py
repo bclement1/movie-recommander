@@ -1,11 +1,11 @@
+"""Generate and send SparQL queries to DBpedia API's SparQL endpoint."""
 from SPARQLWrapper import SPARQLWrapper, JSON
-from pprint import pprint
-
 
 def category_query(category: str):
+    """Query DBpedia using SparQL and return the result (JSON format)."""
     sparql = SPARQLWrapper("https://dbpedia.org/sparql")
     query_txt = generate_query_txt(category)
-    print(query_txt)
+    print("SparQL query reads: {}".format(query_txt))
     sparql.setQuery(query_txt)
     sparql.setReturnFormat(JSON)
     query_res = sparql.query().convert()
@@ -13,6 +13,7 @@ def category_query(category: str):
 
 
 def generate_query_txt(category: str):
+    """Return a SparQL query generated using the movie category specified by the user."""
     category = category.replace("-", "_")
     # SELECT section
     query_txt = "SELECT DISTINCT ?film, ?abstract, ?name"

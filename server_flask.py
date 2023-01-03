@@ -8,21 +8,25 @@ app = Flask(__name__)
 
 @app.route("/", methods=["POST", "GET"])
 def home():
+    """Handle website's home page."""
     if request.method == "POST":
+        # user entered its preferences, query DBpedia and return the result
         for category in request.form.values():
             query_res = category_query(category=category)
         headings = ["Title", "Abstract"]
         data = get_data_from_json(query_res)
         return render_template("answer.html", headings=headings, data=data)
+    # else, keep the app running
     return render_template("home.html")
 
 
 def get_data_from_json(json: Dict):
+    """Parse the JSON file received from the query to DBpedia."""
     data = []
-    for result in json["results"]["bindings"]:
-        abstract = result["abstract"]["value"]
-        title = result["name"]["value"]
-        data.append([title, abstract])
+    for result in json["results"]["bindings"]: # iterate over matching movies
+        movie_abstract = result["abstract"]["value"]
+        movie_title = result["name"]["value"]
+        data.append([movie_title, movie_abstract])
     return data
 
 
