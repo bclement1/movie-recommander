@@ -1,3 +1,7 @@
+/*
+Specify the style of home page.
+*/
+
 body {
     background: url("/static/imgs/cinema.jpg") no-repeat center center fixed;
     background-size: cover;
@@ -51,7 +55,7 @@ form button {
     margin-top: 20px;
 }
 
-/*Recommendations*/
+/*Recommendations (output)*/
 div.recommendation {
     color: white;
     width: 50%
