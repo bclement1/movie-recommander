@@ -5,7 +5,7 @@ def category_query(category: str):
     """Query DBpedia using SparQL and return the result (JSON format)."""
     sparql = SPARQLWrapper("https://dbpedia.org/sparql")
     query_txt = generate_query_txt(category)
-    print("SparQL query reads: {}".format(query_txt))
+    print("SparQL query reads: \n{}".format(query_txt))
     sparql.setQuery(query_txt)
     sparql.setReturnFormat(JSON)
     query_res = sparql.query().convert()
