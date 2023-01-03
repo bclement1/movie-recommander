@@ -1,0 +1,41 @@
+/*
+Specify the style of answer page.
+*/
+
+body {
+    background: url("/static/imgs/cinema.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Title*/
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/*Recommendations (output)*/
+div.recommendation {
+    color: white;
+    width: 50%
+}
+
+div.recommendation table {
+    background-color: black;
+}
+
+.table_header {
+    text-align: center;
+    padding: 5px;
+    border: 2px solid white;
+}
+
+.recommendation_cell {
+    text-align: center;
+    padding: 5px;
+    border: 2px solid white;
+}

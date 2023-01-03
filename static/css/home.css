@@ -54,9 +54,3 @@ form button {
     border-radius: 5px;
     margin-top: 20px;
 }
-
-/*Recommendations (output)*/
-div.recommendation {
-    color: white;
-    width: 50%
-}
