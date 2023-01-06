@@ -13,11 +13,12 @@ body {
 header {
     text-align: center;
     color: white;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-* {
-    border: 1px solid white;
-}
+
+
 
 /*Questions*/
 form {
@@ -26,40 +27,69 @@ form {
     align-items: center;
 }
 
-div.question {
+div.question-block {
     text-align: center;
     color: white;
-    background-color: black;
-    border: 2px solid white;
-    border-radius: 5px;
-    width: 60%;
-    margin-top: 0px;
+    background-color: rgb(41, 39, 39);
+    border-radius: 3px;
+    width: 70%;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-p.questionToUser { /* La question à poser */
-
+div.question-block p { /* La question à poser */
+    font-size: 1.5em;
 }
 
-div.question li {
-    margin-top: 5px;
+div.question-block ul {
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 0px;
 }
 
-div.question label {
+div.question-block li {
+    height: 100%;
+    margin-left: 0px;
+}
+
+div.question-block li:hover {
+    background-color:  rgb(90, 86, 86);
+}
+
+div.question-block label {
     display: flex;
     align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 60px;
+    font-size: 1em;
+    
 }
 
-div.question input[type=checkbox] {
+div.question-block input[type=checkbox] {
     margin-right: 10px;
     margin-left: 10px;
 }
 
+#tick1, #tick2, #tick3, #tick4  {
+    width: 2%;
+    height: 2%;
+    margin-right: 15px;
+    display: None;
+}
+
+input.checkbox {
+    display: None;
+}
+
 form button {
-    background-color: red;
+    background-color: rgb(41, 39, 39);
     color: white;
     text-align: center;
-    width: 10%;
+    width: 20%;
+    font-size: 1.1em;
+    height: 40px;
     border: 2px solid white;
     border-radius: 5px;
-    margin-top: 20px;
+    
 }

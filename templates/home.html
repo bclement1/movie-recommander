@@ -12,36 +12,73 @@
         <h1>Your Movie Recommender</h1>
     </header>
     <form method="post">
-        <div class="question">
-            <p class="questionToUser">What type of movie do you want to watch ?</p>
+        <div class="question-block">
+            <p>What type of movie do you want to watch ?</p>
             <ul style="list-style: None;">
                 <li>
                     <label>
-                        <input type="checkbox" id="1" name="answer" value="Action"
-                            onclick="selectOnlyThis(this.id, 1, 4)">
-                        Action </label>
+                        <img src="static/imgs/check.png" id="tick1"/>
+                        <input type="checkbox" class="checkbox" id="1" name="answer" value="Action" onclick="selectOnlyThis(this.id, 1, 4)">
+                        Action
+                    </label>
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" id="2" name="answer" value="Horror"
-                            onclick="selectOnlyThis(this.id, 1 ,4)">
-                        Horror </label>
+                        <img src="static/imgs/check.png" id="tick2"/>
+                        <input type="checkbox" class="checkbox" id="2" name="answer" value="Horror" onclick="selectOnlyThis(this.id, 1 ,4)">
+                        Horror
+                    </label>
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" id="3" name="answer" value="Comedy"
-                            onclick="selectOnlyThis(this.id, 1, 4)">
-                        Comedy </label>
+                        <img src="static/imgs/check.png" id="tick3"/>
+                        <input type="checkbox" class="checkbox" id="3" name="answer" value="Comedy" onclick="selectOnlyThis(this.id, 1, 4)">
+                        Comedy
+                    </label>
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" id="4" name="answer" value="Science-fiction"
-                            onclick="selectOnlyThis(this.id, 1 ,4)">
-                        Science-fiction </label>
+                        <img src="static/imgs/check.png" id="tick4"/>
+                        <input type="checkbox" class="checkbox" id="4" name="answer" value="Science-fiction" onclick="selectOnlyThis(this.id, 1 ,4)">
+                        Science-fiction
+                    </label>
                 </li>
             </ul>
         </div>
-        <button type="submit"> Submit </button>
+        <div class="question-block">
+            <p>Which actor/actress is your favorite among the following?</p>
+            <ul style="list-style: None;">
+                <li>
+                    <label>
+                        <img src="static/imgs/check.png" id="tick1"/>
+                        <input type="checkbox" class="checkbox" id="1" name="answer" value="Action" onclick="selectOnlyThis(this.id, 1, 4)">
+                        Harrison Ford
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <img src="static/imgs/check.png" id="tick2"/>
+                        <input type="checkbox" class="checkbox" id="2" name="answer" value="Horror" onclick="selectOnlyThis(this.id, 1 ,4)">
+                        Jennifer Lawrence
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <img src="static/imgs/check.png" id="tick3"/>
+                        <input type="checkbox" class="checkbox" id="3" name="answer" value="Comedy" onclick="selectOnlyThis(this.id, 1, 4)">
+                        Robin Williams
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <img src="static/imgs/check.png" id="tick4"/>
+                        <input type="checkbox" class="checkbox" id="4" name="answer" value="Science-fiction" onclick="selectOnlyThis(this.id, 1 ,4)">
+                        Emilia Clarke
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <button type="submit">Find me movies!</button>
     </form>
 </body>
 
