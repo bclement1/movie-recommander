@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="static/css/answer.css" rel="stylesheet" />
+    <link href="/static/css/answer.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -14,13 +14,13 @@
         <table>
             <tr>
                 {% for header in headings %}
-                <th> {{ header }}</th>
+                <th class="table_header"> {{ header }}</th>
                 {% endfor %}
             </tr>
             {%for row in data%}
             <tr>
                 {%for cell in row %}
-                <td> {{ cell }} </td>
+                <td class="recommendation_cell"> {{ cell }} </td>
                 {% endfor %}
             </tr>
             {% endfor %}
