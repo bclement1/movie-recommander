@@ -3,15 +3,20 @@ Specify the style of home page.
 */
 
 body {
-    background: url("/static/imgs/cinema.jpg") no-repeat center center fixed;
+    background: url("/static/imgs/cinema_blur.jpg") no-repeat center center fixed;
     background-size: cover;
     background-color: black;
+
 }
 
 /*Title*/
 header {
     text-align: center;
     color: white;
+}
+
+* {
+    border: 1px solid white;
 }
 
 /*Questions*/
@@ -27,8 +32,12 @@ div.question {
     background-color: black;
     border: 2px solid white;
     border-radius: 5px;
-    width: 30%;
-    margin-top: 20px;
+    width: 60%;
+    margin-top: 0px;
+}
+
+p.questionToUser { /* La question à poser */
+
 }
 
 div.question li {
