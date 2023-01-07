@@ -11,10 +11,14 @@ def home():
     """Handle website's home page."""
     if request.method == "POST":
         # user entered its preferences, query DBpedia and return the result
+        count = 1 # so far, only the first question is handled
         for category in request.form.values():
+            if count > 1:
+                continue
             query_res = category_query(category=category)
-        headings = ["Title", "Abstract"]
-        data = get_data_from_json(query_res)
+            headings = ["Title", "Abstract"]
+            data = get_data_from_json(query_res)
+            count += 1
         return render_template("answer.html", headings=headings, data=data)
     # else, keep the app running
     return render_template("home.html")
