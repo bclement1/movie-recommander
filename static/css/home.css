@@ -2,11 +2,23 @@
 Specify the style of home page.
 */
 
+/*
+Custom fonts
+*/
+@font-face {
+    font-family: "inter";
+    src: url("fonts/inter/inter-regular.ttf");
+}
+
+/*
+Styles
+*/
+
 body {
     background: url("/static/imgs/cinema_blur.jpg") no-repeat center center fixed;
     background-size: cover;
     background-color: black;
-
+    font-family: "inter";
 }
 
 /*Title*/
