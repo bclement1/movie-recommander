@@ -72,7 +72,7 @@ img.tick {
     width: 2%;
     height: 2%;
     margin-right: 15px;
-    display: None;
+    opacity: 0;
 }
 
 input.radio {

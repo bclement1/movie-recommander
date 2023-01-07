@@ -11,9 +11,9 @@ function showTick(elementToTick) {
 
     for (var i = 0; i < numChoices; i++) {
         // untick all available choices in the question
-        choices[i].children[0].children[0].style.display = "none";
+        choices[i].children[0].children[0].style.opacity = 0;
     }
 
     // display the selected option
-    elementToTick.parentElement.children[0].style.display = "block";
+    elementToTick.parentElement.children[0].style.opacity = 100;
 }
