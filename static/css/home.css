@@ -17,9 +17,6 @@ header {
     margin-bottom: 40px;
 }
 
-
-
-
 /*Questions*/
 form {
     display: flex;
@@ -66,19 +63,19 @@ div.question-block label {
     
 }
 
-div.question-block input[type=checkbox] {
+div.question-block input[type=radio] {
     margin-right: 10px;
     margin-left: 10px;
 }
 
-#tick1, #tick2, #tick3, #tick4  {
+img.tick {
     width: 2%;
     height: 2%;
     margin-right: 15px;
     display: None;
 }
 
-input.checkbox {
+input.radio {
     display: None;
 }
 

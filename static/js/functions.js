@@ -1,10 +1,19 @@
-// Some functions used on home page.
+// Functions used for dynamic display in the home.html.
 
-function selectOnlyThis(id, begin, end) {
-    for (var i = begin; i <= end; i++) {
-        document.getElementById(i).checked = false;
-        document.getElementById("tick" + i.toString()).style.display = "none";
+function showTick(elementToTick) {
+    var choices = elementToTick.parentElement.parentElement.parentElement.children; // ul list
+    var numChoices = choices.length;
+
+    // logs for debug
+    console.log("Element to tick:", elementToTick);
+    console.log("Available choices in the same question", choices);
+    console.log("Number of available choices:", numChoices);
+
+    for (var i = 0; i < numChoices; i++) {
+        // untick all available choices in the question
+        choices[i].children[0].children[0].style.display = "none";
     }
-    document.getElementById(id).checked = true;
-    document.getElementById("tick" + id.toString()).style.display = "block";
+
+    // display the selected option
+    elementToTick.parentElement.children[0].style.display = "block";
 }
