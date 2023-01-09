@@ -63,5 +63,4 @@ function checkSubmission(form) {
             }
         }
     }
-
 }

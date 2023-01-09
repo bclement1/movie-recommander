@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <script src="static/js/functions.js"></script>
     <header>
         <h1>Your Movie Recommender</h1>
     </header>
@@ -26,6 +27,18 @@
             {% endfor %}
         </table>
     </div>
+    <div id="main_answer_block">
+
+    </div>
+    <div id="same_actor_block">
+
+    </div>
+    <div id="same_genre_block">
+
+    </div>
+    <a id="return_home_button" href="{{ url_for('home') }}">
+        Bring me home!
+    </a>
 </body>
 
 </html>

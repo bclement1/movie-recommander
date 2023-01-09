@@ -19,9 +19,9 @@ def home():
             headings = ["Title", "Abstract"]
             data = get_data_from_json(query_res)
             count += 1
-        return render_template("answer.html", headings=headings, data=data)
+        return render_template("answer.html", headings=headings, data=data, name="answer")
     # else, keep the app running
-    return render_template("home.html")
+    return render_template("home.html", name="home")
 
 
 def get_data_from_json(json: Dict):
@@ -33,6 +33,5 @@ def get_data_from_json(json: Dict):
         data.append([movie_title, movie_abstract])
     return data
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='localhost', port=5000, debug=True)
