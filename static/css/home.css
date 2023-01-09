@@ -31,7 +31,9 @@ header {
     margin-bottom: 60px;
 }
 
-/*Questions*/
+/*
+Questions
+*/
 form {
     display: flex;
     flex-direction: column;
@@ -48,8 +50,9 @@ div.question-block {
 }
 
 div.question-block p {
-    /* La question à poser */
-    font-size: 1.5em;
+    /* A question to ask */
+    font-size: 1.2em;
+    height: 400%;
 }
 
 div.question-block ul {
@@ -86,10 +89,7 @@ div.question-block input[type=radio] {
     margin-left: 10px;
 }
 
-#tick1,
-#tick2,
-#tick3,
-#tick4 {
+img.tick {
     width: 2%;
     height: 2%;
     margin-right: 15px;
@@ -106,7 +106,12 @@ form button {
     text-align: center;
     width: 20%;
     font-size: 1.1em;
-    height: 40px;
-    border: 2px solid white;
+    height: 50px;
+    border: 1px solid grey;
     border-radius: 5px;
+}
+
+form button:hover {
+    background-color: rgb(90, 86, 86);
+    cursor: pointer;
 }
