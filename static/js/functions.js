@@ -64,3 +64,67 @@ function checkSubmission(form) {
         }
     }
 }
+
+// Variables pour sauvegarde des résultats Jinja2
+var my_main_list;
+var my_reco_list1;
+var my_reco_list2;
+
+function displayFirstResults() {
+    // Display SPARQL query results on page load
+    
+    // Display results for main merry-go-round
+    var main_answer_block = document.getElementById("main_answer_block");
+    var panels = main_answer_block.children[1].children; // all panels (including arrows!)
+    for (var i = 1; i < 4; i++) {
+        var panel = panels[i];
+        var panelTitle = panel.children[0];
+        var panelImg = panel.children[1];
+        var panelAbstract = panel.children[2];
+        panelTitle.innerHTML = my_main_list["data"][i-1]["title"]; 
+        panelImg.src = my_main_list["data"][i-1]["img"];
+        panelAbstract.innerHTML = my_main_list["data"][i-1]["abstract"];
+    }
+
+    // Display results for recommender panel 1
+    var same_actor_block = document.getElementById("same_actor_block");
+    var panels = same_actor_block.children[1].children; // all panels (including arrows!)
+    for (var i = 1; i < 4; i++) {
+        var panel = panels[i];
+        var panelTitle = panel.children[0];
+        var panelImg = panel.children[1];
+        var panelAbstract = panel.children[2];
+        panelTitle.innerHTML = my_main_list["data"][i-1]["title"]; 
+        panelImg.src = my_main_list["data"][i-1]["img"];
+        panelAbstract.innerHTML = my_main_list["data"][i-1]["abstract"];
+    }
+
+    // Display results for recommender panel 2
+    var same_genre_block = document.getElementById("same_genre_block");
+    var panels = same_genre_block.children[1].children; // all panels (including arrows!)
+    for (var i = 1; i < 4; i++) {
+        var panel = panels[i];
+        var panelTitle = panel.children[0];
+        var panelImg = panel.children[1];
+        var panelAbstract = panel.children[2];
+        panelTitle.innerHTML = my_main_list["data"][i-1]["title"]; 
+        panelImg.src = my_main_list["data"][i-1]["img"];
+        panelAbstract.innerHTML = my_main_list["data"][i-1]["abstract"];
+    }
+}
+
+function saveQueryResults(arg1, arg2, arg3) {
+    // Save results from Jinja2
+    my_main_list = JSON.parse(arg1);
+    my_reco_list1 = JSON.parse(arg2);
+    my_reco_list2 = JSON.parse(arg3);
+    displayFirstResults();
+}
+
+function leftRound(this) {
+    // Move the merry-go-round left-wise
+}
+
+function rightRound(this) {
+    // Move the merry-go-round left-wise
+}

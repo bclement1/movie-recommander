@@ -2,6 +2,7 @@
 from typing import Dict
 from flask import Flask, render_template, request
 from sparql_queries import category_query
+import json
 
 app = Flask(__name__)
 
@@ -19,7 +20,74 @@ def home():
             headings = ["Title", "Abstract"]
             data = get_data_from_json(query_res)
             count += 1
-        return render_template("answer.html", headings=headings, data=data, name="answer")
+            """Pour test - Clément (fais office de placeholder pour l'instant)"""
+            main_list = {
+                "data": 
+                [
+                {
+                    "title": "title1",
+                    "abstract": "abstract1",
+                    "img": None 
+                },
+                {
+                    "title": "nicolas",
+                    "abstract": "abstract2",
+                    "img": None 
+                },
+                {
+                    "title": "title3",
+                    "abstract": "abstract3",
+                    "img": None 
+                }
+                ]
+            }
+            reco_list1 = {
+                "data":
+                [
+                {
+                    "title": "title1",
+                    "abstract": "abstract1",
+                    "img": None 
+                },
+                {
+                    "title": "nicolas",
+                    "abstract": "abstract2",
+                    "img": None 
+                },
+                {
+                    "title": "title3",
+                    "abstract": "abstract3",
+                    "img": None 
+                }
+                ]
+            }
+            reco_list2 = {
+                "data": [
+                {
+                    "title": "title1",
+                    "abstract": "abstract1",
+                    "img": None 
+                },
+                {
+                    "title": "title2",
+                    "abstract": "abstract2",
+                    "img": None 
+                },
+                {
+                    "title": "title3",
+                    "abstract": "abstract3",
+                    "img": None 
+                }
+                ]
+            }
+        return render_template(
+            "answer.html",
+            headings=headings,
+            data=data,
+            name="answer",
+            main_list=json.dumps(main_list),
+            reco_list1=json.dumps(reco_list1),
+            reco_list2=json.dumps(reco_list2))
     # else, keep the app running
     return render_template("home.html", name="home")
 

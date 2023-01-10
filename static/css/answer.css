@@ -121,27 +121,11 @@ div.recommendation table {
     
 }
 
-.left-display {
+.panel-display {
     height: 100%;
     width: 25%;
     border-radius: 10px;
     background-color: rgb(90, 86, 86);
-    filter: blur(5px);
-}
-
-.center-display {
-    height: 100%;
-    width: 25%;
-    border-radius: 10px;
-    background-color: rgb(90, 86, 86);
-}
-
-.right-display {
-    height: 100%;
-    width: 25%;
-    border-radius: 10px;
-    background-color: rgb(90, 86, 86);
-    filter: blur(5px);
 }
 
 .right-swift:hover, .left-swift:hover {
