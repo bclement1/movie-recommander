@@ -51,7 +51,7 @@ def generate_query_txt(
     # Language filter
     query_txt += "FILTER langMatches(lang(?abstract), 'en')\n"
     # End of WHERE section
-    query_txt += "} LIMIT 100"
+    query_txt += "} LIMIT 10"
     return query_txt
 
 
