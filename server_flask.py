@@ -13,11 +13,18 @@ def home():
     if request.method == "POST":
         # user entered its preferences, query DBpedia and return the result
         preferences = list(request.form.values())
-        query_res = query_dbpedia(
+        # Make queries
+        query_pref = query_dbpedia(
             category=preferences[0], actor=preferences[1], time=preferences[2]
         )
-        headings = ["Title", "Abstract"]
-        data = get_data_from_json(query_res)
+        query_same_cat = query_dbpedia(category=preferences[0])
+        query_same_actor = query_dbpedia(actor=preferences[1])
+        headings = ["Title", "Abstract", "Runtime"]
+        # Extract relevant information from the queries results
+        data_pref = get_data_from_json(query_pref)
+        data_same_cat = get_data_from_json(query_same_cat)
+        data_same_actor = get_data_from_json(query_same_actor)
+
         """Pour test - Clément (fais office de placeholder pour l'instant)"""
         main_list = {
             "data": [
@@ -43,7 +50,9 @@ def home():
         return render_template(
             "answer.html",
             headings=headings,
-            data=data,
+            data_pref=data_pref,
+            data_same_cat=data_same_cat,
+            data_same_actor=data_same_actor,
             name="answer",
             main_list=json.dumps(main_list),
             reco_list1=json.dumps(reco_list1),
@@ -59,7 +68,8 @@ def get_data_from_json(json: Dict):
     for result in json["results"]["bindings"]:  # iterate over matching movies
         movie_abstract = result["abstract"]["value"]
         movie_title = result["name"]["value"]
-        data.append([movie_title, movie_abstract])
+        movie_runtime = result["run"]["value"]
+        data.append([movie_title, movie_abstract, movie_runtime])
     return data
 
 

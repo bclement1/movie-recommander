@@ -12,13 +12,48 @@
         <h1>Your Movie Recommender</h1>
     </header>
     <div class="recommendation">
+        <h2>According to your research</h2>
         <table>
             <tr>
                 {% for header in headings %}
                 <th class="table_header"> {{ header }}</th>
                 {% endfor %}
             </tr>
-            {%for row in data%}
+            {%for row in data_pref%}
+            <tr>
+                {%for cell in row %}
+                <td class="recommendation_cell"> {{ cell }} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="recommendation">
+        <h2>With the same actor</h2>
+        <table>
+            <tr>
+                {% for header in headings %}
+                <th class="table_header"> {{ header }}</th>
+                {% endfor %}
+            </tr>
+            {%for row in data_same_actor%}
+            <tr>
+                {%for cell in row %}
+                <td class="recommendation_cell"> {{ cell }} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="recommendation">
+        <h2>On the same genre</h2>
+        <table>
+            <tr>
+                {% for header in headings %}
+                <th class="table_header"> {{ header }}</th>
+                {% endfor %}
+            </tr>
+            {%for row in data_same_cat%}
             <tr>
                 {%for cell in row %}
                 <td class="recommendation_cell"> {{ cell }} </td>
