@@ -11,81 +11,29 @@
     <header>
         <h1>Your Movie Recommender</h1>
     </header>
-    <div class="recommendation">
-        <h2>According to your research</h2>
-        <table>
-            <tr>
-                {% for header in headings %}
-                <th class="table_header"> {{ header }}</th>
-                {% endfor %}
-            </tr>
-            {%for row in data_pref%}
-            <tr>
-                {%for cell in row %}
-                <td class="recommendation_cell"> {{ cell }} </td>
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
-    <div class="recommendation">
-        <h2>With the same actor</h2>
-        <table>
-            <tr>
-                {% for header in headings %}
-                <th class="table_header"> {{ header }}</th>
-                {% endfor %}
-            </tr>
-            {%for row in data_same_actor%}
-            <tr>
-                {%for cell in row %}
-                <td class="recommendation_cell"> {{ cell }} </td>
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
-    <div class="recommendation">
-        <h2>On the same genre</h2>
-        <table>
-            <tr>
-                {% for header in headings %}
-                <th class="table_header"> {{ header }}</th>
-                {% endfor %}
-            </tr>
-            {%for row in data_same_cat%}
-            <tr>
-                {%for cell in row %}
-                <td class="recommendation_cell"> {{ cell }} </td>
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
-        
     <div id="main_answer_block">
         <p class="reco-block-title">According to your research:</p>
         <div class="carroussel-container">
             <div class="left-swift" onclick="leftRound(this);">
-                <img src="static/imgs/left-arrow.png" class="carroussel-arrow"/>
+                <img src="static/imgs/left-arrow.png" class="carroussel-arrow" />
             </div>
             <div class="panel-display" style="filter: blur(5px);">
                 <p class="title-carroussel"></p>
-                <img src="" class="img-carroussel"/>
+                <img src="" class="img-carroussel" />
                 <p class="abstract-carroussel"></p>
             </div>
             <div class="panel-display">
                 <p class="title-carroussel"></p>
-                <img src="" class="img-carroussel"/>
+                <img src="" class="img-carroussel" />
                 <p class="abstract-carroussel"></p>
             </div>
             <div class="panel-display" style="filter: blur(5px);">
                 <p class="title-carroussel"></p>
-                <img src="" class="img-carroussel"/>
+                <img src="" class="img-carroussel" />
                 <p class="abstract-carroussel"></p>
             </div>
             <div class="right-swift" onclick="rightRound(this);">
-                <img src="static/imgs/right-arrow.png" class="carroussel-arrow"/>
+                <img src="static/imgs/right-arrow.png" class="carroussel-arrow" />
             </div>
         </div>
     </div>
@@ -93,51 +41,51 @@
         <p class="reco-block-title">With the same actor:</p>
         <div class="carroussel-container">
             <div class="left-swift" onclick="leftRound(this);">
-                <img src="static/imgs/left-arrow.png" class="carroussel-arrow"/>                
+                <img src="static/imgs/left-arrow.png" class="carroussel-arrow" />
             </div>
             <div class="panel-display" style="filter: blur(5px);">
                 <p class="title-carroussel"></p>
-                <img src="" class="img-carroussel"/>
+                <img src="" class="img-carroussel" />
                 <p class="abstract-carroussel"></p>
             </div>
             <div class="panel-display">
                 <p class="title-carroussel"></p>
-                <img src="" class="img-carroussel"/>
+                <img src="" class="img-carroussel" />
                 <p class="abstract-carroussel"></p>
             </div>
             <div class="panel-display" style="filter: blur(5px);">
                 <p class="title-carroussel"></p>
-                <img src="" class="img-carroussel"/>
+                <img src="" class="img-carroussel" />
                 <p class="abstract-carroussel"></p>
             </div>
             <div class="right-swift" onclick="rightRound(this);">
-                <img src="static/imgs/right-arrow.png" class="carroussel-arrow"/>
+                <img src="static/imgs/right-arrow.png" class="carroussel-arrow" />
             </div>
         </div>
     </div>
     <div id="same_genre_block">
-        <p class="reco-block-title">On the same genre:</p> 
+        <p class="reco-block-title">On the same genre:</p>
         <div class="carroussel-container">
             <div class="left-swift" onclick="leftRound(this);">
-                <img src="static/imgs/left-arrow.png" class="carroussel-arrow"/>
+                <img src="static/imgs/left-arrow.png" class="carroussel-arrow" />
             </div>
             <div class="panel-display" style="filter: blur(5px);">
                 <p class="title-carroussel" style="filter: blur(5px);"></p>
-                <img src="" class="img-carroussel"/>
+                <img src="" class="img-carroussel" />
                 <p class="abstract-carroussel"></p>
             </div>
             <div class="panel-display">
                 <p class="title-carroussel"></p>
-                <img src="" class="img-carroussel"/>
+                <img src="" class="img-carroussel" />
                 <p class="abstract-carroussel"></p>
             </div>
             <div class="panel-display" style="filter: blur(5px);">
                 <p class="title-carroussel"></p>
-                <img src="" class="img-carroussel"/>
+                <img src="" class="img-carroussel" />
                 <p class="abstract-carroussel"></p>
             </div>
             <div class="right-swift" onclick="rightRound(this);">
-                <img src="static/imgs/right-arrow.png" class="carroussel-arrow"/>
+                <img src="static/imgs/right-arrow.png" class="carroussel-arrow" />
             </div>
         </div>
     </div>

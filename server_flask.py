@@ -25,38 +25,13 @@ def home():
         query_same_actor = query_dbpedia(actor=preferences[1])
         headings = ["Title", "Abstract", "Runtime"]
         # Extract relevant information from the queries results
-        data_pref = get_data_from_json(query_pref)
-        data_same_cat = get_data_from_json(query_same_cat)
-        data_same_actor = get_data_from_json(query_same_actor)
+        main_list = get_data_from_json(query_pref)
+        reco_list1 = get_data_from_json(query_same_actor)
+        reco_list2 = get_data_from_json(query_same_cat)
 
-        """Pour test - Clément (fais office de placeholder pour l'instant)"""
-        main_list = {
-            "data": [
-                {"title": "title1", "abstract": "abstract1", "img": None},
-                {"title": "nicolas", "abstract": "abstract2", "img": None},
-                {"title": "title3", "abstract": "abstract3", "img": None},
-            ]
-        }
-        reco_list1 = {
-            "data": [
-                {"title": "title1", "abstract": "abstract1", "img": None},
-                {"title": "nicolas", "abstract": "abstract2", "img": None},
-                {"title": "title3", "abstract": "abstract3", "img": None},
-            ]
-        }
-        reco_list2 = {
-            "data": [
-                {"title": "title1", "abstract": "abstract1", "img": None},
-                {"title": "title2", "abstract": "abstract2", "img": None},
-                {"title": "title3", "abstract": "abstract3", "img": None},
-            ]
-        }
         return render_template(
             "answer.html",
             headings=headings,
-            data_pref=data_pref,
-            data_same_cat=data_same_cat,
-            data_same_actor=data_same_actor,
             name="answer",
             main_list=json.dumps(main_list),
             reco_list1=json.dumps(reco_list1),
@@ -68,12 +43,14 @@ def home():
 
 def get_data_from_json(json: Dict):
     """Parse the JSON file received from the query to DBpedia."""
-    data = []
+    data = {"data": []}
     for result in json["results"]["bindings"]:  # iterate over matching movies
         movie_abstract = result["abstract"]["value"]
         movie_title = result["name"]["value"]
         movie_runtime = convert_runtime(result["run"]["value"])
-        data.append([movie_title, movie_abstract, movie_runtime])
+        data["data"].append(
+            {"title": movie_title, "abstract": movie_abstract, "img": None}
+        )
     return data
 
 
