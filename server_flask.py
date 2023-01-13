@@ -23,7 +23,6 @@ def home():
         )
         query_same_cat = query_dbpedia(category=preferences[0])
         query_same_actor = query_dbpedia(actor=preferences[1])
-        headings = ["Title", "Abstract", "Runtime"]
         # Extract relevant information from the queries results
         main_list = get_data_from_json(query_pref)
         reco_list1 = get_data_from_json(query_same_actor)
@@ -31,7 +30,6 @@ def home():
 
         return render_template(
             "answer.html",
-            headings=headings,
             name="answer",
             main_list=json.dumps(main_list),
             reco_list1=json.dumps(reco_list1),
