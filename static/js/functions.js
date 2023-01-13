@@ -121,10 +121,10 @@ function saveQueryResults(arg1, arg2, arg3) {
     displayFirstResults();
 }
 
-function leftRound(this) {
+function leftRound() {
     // Move the merry-go-round left-wise
 }
 
-function rightRound(this) {
+function rightRound() {
     // Move the merry-go-round left-wise
 }
