@@ -4,6 +4,10 @@ from flask import Flask, render_template, request
 import json
 from sparql_queries import query_dbpedia
 
+
+HOUR_TO_SECOND = 3600
+HOUR_TO_MINUTE = 60
+
 app = Flask(__name__)
 
 
@@ -15,7 +19,7 @@ def home():
         preferences = list(request.form.values())
         # Make queries
         query_pref = query_dbpedia(
-            category=preferences[0], actor=preferences[1], time=preferences[2]
+            category=preferences[0], actor=preferences[1], duration=preferences[2]
         )
         query_same_cat = query_dbpedia(category=preferences[0])
         query_same_actor = query_dbpedia(actor=preferences[1])
@@ -68,9 +72,19 @@ def get_data_from_json(json: Dict):
     for result in json["results"]["bindings"]:  # iterate over matching movies
         movie_abstract = result["abstract"]["value"]
         movie_title = result["name"]["value"]
-        movie_runtime = result["run"]["value"]
+        movie_runtime = convert_runtime(result["run"]["value"])
         data.append([movie_title, movie_abstract, movie_runtime])
     return data
+
+
+def convert_runtime(runtime: str):
+    """Convert runtime format to hours/minutes"""
+    # Run time in seconds
+    runtime_float = float(runtime)
+    hours = runtime_float // HOUR_TO_SECOND
+    minutes = (runtime_float % HOUR_TO_SECOND) // HOUR_TO_MINUTE
+    runtime = "{}h{}min".format(hours, minutes)
+    return runtime
 
 
 if __name__ == "__main__":

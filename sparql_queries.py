@@ -7,10 +7,14 @@ HOUR_TO_SECOND = 3600
 logging.basicConfig(level=logging.INFO)
 
 
-def query_dbpedia(category: str, actor: str, time: str):
+def query_dbpedia(
+    category: Optional[str] = None,
+    actor: Optional[str] = None,
+    duration: Optional[str] = None,
+):
     """Query DBpedia using SparQL and return the result (JSON format)."""
     sparql = SPARQLWrapper("https://dbpedia.org/sparql")
-    query_txt = generate_query_txt(category=category, actor=actor, time=time)
+    query_txt = generate_query_txt(category=category, actor=actor, duration=duration)
     logging.info("SparQL query reads: \n{}".format(query_txt))
     sparql.setQuery(query_txt)
     sparql.setReturnFormat(JSON)
@@ -21,10 +25,10 @@ def query_dbpedia(category: str, actor: str, time: str):
 def generate_query_txt(
     category: Optional[str] = None,
     actor: Optional[str] = None,
-    time: Optional[str] = None,
+    duration: Optional[str] = None,
 ):
     """Return a SparQL query generated using the fields specified by the user."""
-    if not category and not actor and not time:
+    if not category and not actor and not duration:
         logging.error("No argument specified. Can not generate SparQL query.")
         raise ValueError
     # SELECT section
@@ -42,8 +46,8 @@ def generate_query_txt(
         actor = actor.replace(" ", "_")
         query_txt += "?film dbo:starring dbr:{} . \n".format(actor)
     # Duration filter
-    if time:
-        query_txt = query_time_filter(time=time, query_txt=query_txt)
+    if duration:
+        query_txt = query_time_filter(duration=duration, query_txt=query_txt)
     # Language filter
     query_txt += "FILTER langMatches(lang(?abstract), 'en')\n"
     # End of WHERE section
@@ -51,8 +55,8 @@ def generate_query_txt(
     return query_txt
 
 
-def query_time_filter(time: str, query_txt: str):
-    if time != "inf":
-        time_float = float(time)
-        query_txt += "FILTER( ?run <= {}) .\n".format(time_float * HOUR_TO_SECOND)
+def query_time_filter(duration: str, query_txt: str):
+    if duration != "inf":
+        duration_float = float(duration)
+        query_txt += "FILTER( ?run <= {}) .\n".format(duration_float * HOUR_TO_SECOND)
     return query_txt
