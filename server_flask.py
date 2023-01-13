@@ -81,8 +81,8 @@ def convert_runtime(runtime: str):
     """Convert runtime format to hours/minutes"""
     # Run time in seconds
     runtime_float = float(runtime)
-    hours = runtime_float // HOUR_TO_SECOND
-    minutes = (runtime_float % HOUR_TO_SECOND) // HOUR_TO_MINUTE
+    hours = int(runtime_float // HOUR_TO_SECOND)
+    minutes = int((runtime_float % HOUR_TO_SECOND) // HOUR_TO_MINUTE)
     runtime = "{}h{}min".format(hours, minutes)
     return runtime
 
