@@ -22,28 +22,6 @@ header {
 }
 
 /*Recommendations (output)*/
-div.recommendation {
-    color: white;
-    width: 50%;
-    display: none;
-}
-
-div.recommendation table {
-    background-color: black;
-}
-
-.table_header {
-    text-align: center;
-    padding: 5px;
-    border: 2px solid white;
-}
-
-.recommendation_cell {
-    text-align: center;
-    padding: 5px;
-    border: 2px solid white;
-}
-
 #return_home_button {
     background-color: rgb(41, 39, 39);
     color: white;
@@ -52,7 +30,7 @@ div.recommendation table {
     font-size: 1.1em;
     height: 35px;
     border: 1px solid grey;
-    border-radius: 5px; 
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +43,9 @@ div.recommendation table {
     background-color: rgb(90, 86, 86);
 }
 
-#main_answer_block, #same_actor_block, #same_genre_block {
+#main_answer_block,
+#same_actor_block,
+#same_genre_block {
     /* border: 1px solid white; */
     border-radius: 10px;
     width: 85%;
@@ -100,7 +80,7 @@ div.recommendation table {
     height: 50%;
     width: 4%;
     margin-top: 75px;
-    background-color:  rgb(90, 86, 86);
+    background-color: rgb(90, 86, 86);
     border-radius: 10px;
     cursor: pointer;
     display: flex;
@@ -112,13 +92,13 @@ div.recommendation table {
     height: 50%;
     width: 4%;
     margin-top: 75px;
-    background-color:  rgb(90, 86, 86);
+    background-color: rgb(90, 86, 86);
     border-radius: 10px;
     cursor: pointer;
     display: flex;
     align-items: center;
     padding-left: 3px;
-    
+
 }
 
 .panel-display {
@@ -128,8 +108,9 @@ div.recommendation table {
     background-color: rgb(90, 86, 86);
 }
 
-.right-swift:hover, .left-swift:hover {
-    background-color:  rgb(131, 125, 125);
+.right-swift:hover,
+.left-swift:hover {
+    background-color: rgb(131, 125, 125);
 }
 
 .carroussel-arrow {
