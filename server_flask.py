@@ -24,10 +24,9 @@ def home():
         query_same_cat = query_dbpedia(category=preferences[0])
         query_same_actor = query_dbpedia(actor=preferences[1])
         # Extract relevant information from the queries results
-        main_list = get_data_from_json(query_pref)
-        reco_list1 = get_data_from_json(query_same_actor)
-        reco_list2 = get_data_from_json(query_same_cat)
-
+        main_list = process_json_data(get_data_from_json(query_pref))
+        reco_list1 = process_json_data(get_data_from_json(query_same_actor))
+        reco_list2 = process_json_data(get_data_from_json(query_same_cat))
         return render_template(
             "answer.html",
             name="answer",
@@ -60,6 +59,33 @@ def convert_runtime(runtime: str):
     minutes = int((runtime_float % HOUR_TO_SECOND) // HOUR_TO_MINUTE)
     runtime = "{}h{}min".format(hours, minutes)
     return runtime
+
+
+def process_json_data(data_dict: dict):
+    """
+    Process the data fetched from the query.
+    """
+    output_data_dict = {"data": []}
+    for movie_dict in data_dict["data"]:
+        clean_title = (
+            movie_dict["title"].replace('"', "").replace("\\u", "").replace("'", "")
+        )
+        clean_abstract = (
+            movie_dict["abstract"].replace('"', "").replace("\\u", "").replace("'", "")
+        )
+        if len(clean_title) > 300:
+            clean_title = clean_title[:300] + "..."
+        if len(clean_abstract) > 300:
+            clean_abstract = clean_abstract[:300] + "..."
+
+        output_data_dict["data"].append(
+            {
+                "title": clean_title,
+                "abstract": clean_abstract,
+                "img": movie_dict["img"],
+            }
+        )
+    return output_data_dict
 
 
 if __name__ == "__main__":
