@@ -79,10 +79,10 @@ function displayFirstResults() {
     for (var i = 1; i < Math.min(4, my_main_list["data"].length); i++) {
         var panel = panels[i];
         var panelTitle = panel.children[0];
-        var panelImg = panel.children[1];
+        var panelRuntime = panel.children[1];
         var panelAbstract = panel.children[2];
         panelTitle.innerHTML = my_main_list["data"][i - 1]["title"];
-        panelImg.src = my_main_list["data"][i - 1]["img"];
+        panelRuntime.innerHTML = my_main_list["data"][i - 1]["runtime"];
         panelAbstract.innerHTML = my_main_list["data"][i - 1]["abstract"];
     }
 
@@ -92,10 +92,10 @@ function displayFirstResults() {
     for (var i = 1; i < Math.min(4, my_reco_list1["data"].length); i++) {
         var panel = panels[i];
         var panelTitle = panel.children[0];
-        var panelImg = panel.children[1];
+        var panelRuntime = panel.children[1];
         var panelAbstract = panel.children[2];
         panelTitle.innerHTML = my_reco_list1["data"][i - 1]["title"];
-        panelImg.src = my_reco_list1["data"][i - 1]["img"];
+        panelRuntime.innerHTML = my_reco_list1["data"][i - 1]["runtime"];
         panelAbstract.innerHTML = my_reco_list1["data"][i - 1]["abstract"];
     }
 
@@ -105,10 +105,10 @@ function displayFirstResults() {
     for (var i = 1; i < Math.min(4, my_reco_list2["data"].length); i++) {
         var panel = panels[i];
         var panelTitle = panel.children[0];
-        var panelImg = panel.children[1];
+        var panelRuntime = panel.children[1];
         var panelAbstract = panel.children[2];
         panelTitle.innerHTML = my_reco_list2["data"][i - 1]["title"];
-        panelImg.src = my_reco_list2["data"][i - 1]["img"];
+        panelRuntime.innerHTML = my_reco_list2["data"][i - 1]["runtime"];
         panelAbstract.innerHTML = my_reco_list2["data"][i - 1]["abstract"];
     }
 }
@@ -131,10 +131,10 @@ function leftRound1() {
     for (var i = 1; i < Math.min(4, my_main_list["data"].length); i++) {
         var panel = panels[i];
         var panelTitle = panel.children[0];
-        var panelImg = panel.children[1];
+        var panelRuntime = panel.children[1];
         var panelAbstract = panel.children[2];
         panelTitle.innerHTML = my_main_list["data"][i - 1]["title"];
-        panelImg.src = my_main_list["data"][i - 1]["img"];
+        panelRuntime.innerHTML = my_main_list["data"][i - 1]["runtime"];
         panelAbstract.innerHTML = my_main_list["data"][i - 1]["abstract"];
     }
 }
@@ -149,10 +149,10 @@ function leftRound2() {
     for (var i = 1; i < Math.min(4, my_reco_list1["data"].length); i++) {
         var panel = panels[i];
         var panelTitle = panel.children[0];
-        var panelImg = panel.children[1];
+        var panelRuntime = panel.children[1];
         var panelAbstract = panel.children[2];
         panelTitle.innerHTML = my_reco_list1["data"][i - 1]["title"];
-        panelImg.src = my_reco_list1["data"][i - 1]["img"];
+        panelRuntime.innerHTML = my_reco_list1["data"][i - 1]["runtime"];
         panelAbstract.innerHTML = my_reco_list1["data"][i - 1]["abstract"];
     }
 }
@@ -167,10 +167,10 @@ function leftRound3() {
     for (var i = 1; i < Math.min(4, my_reco_list2["data"].length); i++) {
         var panel = panels[i];
         var panelTitle = panel.children[0];
-        var panelImg = panel.children[1];
+        var panelRuntime = panel.children[1];
         var panelAbstract = panel.children[2];
         panelTitle.innerHTML = my_reco_list2["data"][i - 1]["title"];
-        panelImg.src = my_reco_list2["data"][i - 1]["img"];
+        panelRuntime.innerHTML = my_reco_list2["data"][i - 1]["runtime"];
         panelAbstract.innerHTML = my_reco_list2["data"][i - 1]["abstract"];
     }
 }
@@ -185,10 +185,10 @@ function rightRound1() {
     for (var i = 1; i < Math.min(4, my_main_list["data"].length); i++) {
         var panel = panels[i];
         var panelTitle = panel.children[0];
-        var panelImg = panel.children[1];
+        var panelRuntime = panel.children[1];
         var panelAbstract = panel.children[2];
         panelTitle.innerHTML = my_main_list["data"][i - 1]["title"];
-        panelImg.src = my_main_list["data"][i - 1]["img"];
+        panelRuntime.innerHTML = my_main_list["data"][i - 1]["runtime"];
         panelAbstract.innerHTML = my_main_list["data"][i - 1]["abstract"];
     }
 }
@@ -203,10 +203,10 @@ function rightRound2() {
     for (var i = 1; i < Math.min(4, my_reco_list1["data"].length); i++) {
         var panel = panels[i];
         var panelTitle = panel.children[0];
-        var panelImg = panel.children[1];
+        var panelRuntime = panel.children[1];
         var panelAbstract = panel.children[2];
         panelTitle.innerHTML = my_reco_list1["data"][i - 1]["title"];
-        panelImg.src = my_reco_list1["data"][i - 1]["img"];
+        panelRuntime.innerHTML = my_reco_list1["data"][i - 1]["runtime"];
         panelAbstract.innerHTML = my_reco_list1["data"][i - 1]["abstract"];
     }
 }
@@ -221,10 +221,10 @@ function rightRound3() {
     for (var i = 1; i < Math.min(4, my_reco_list2["data"].length); i++) {
         var panel = panels[i];
         var panelTitle = panel.children[0];
-        var panelImg = panel.children[1];
+        var panelRuntime = panel.children[1];
         var panelAbstract = panel.children[2];
         panelTitle.innerHTML = my_reco_list2["data"][i - 1]["title"];
-        panelImg.src = my_reco_list2["data"][i - 1]["img"];
+        panelRuntime.innerHTML = my_reco_list2["data"][i - 1]["runtime"];
         panelAbstract.innerHTML = my_reco_list2["data"][i - 1]["abstract"];
     }
 }

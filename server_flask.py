@@ -46,7 +46,7 @@ def get_data_from_json(json: Dict):
         movie_title = result["name"]["value"]
         movie_runtime = convert_runtime(result["run"]["value"])
         data["data"].append(
-            {"title": movie_title, "abstract": movie_abstract, "img": None}
+            {"title": movie_title, "abstract": movie_abstract, "runtime": movie_runtime}
         )
     return data
 
@@ -82,7 +82,7 @@ def process_json_data(data_dict: dict):
             {
                 "title": clean_title,
                 "abstract": clean_abstract,
-                "img": movie_dict["img"],
+                "runtime": movie_dict["runtime"],
             }
         )
     return output_data_dict
