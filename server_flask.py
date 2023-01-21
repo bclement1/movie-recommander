@@ -19,10 +19,13 @@ def home():
         preferences = list(request.form.values())
         # Make queries
         query_pref = query_dbpedia(
-            category=preferences[0], actor=preferences[1], duration=preferences[2]
+            category=preferences[0],
+            actor=preferences[1],
+            duration=preferences[2],
+            grades=preferences[3],
         )
-        query_same_cat = query_dbpedia(category=preferences[0])
-        query_same_actor = query_dbpedia(actor=preferences[1])
+        query_same_cat = query_dbpedia(category=preferences[0], grades=preferences[3])
+        query_same_actor = query_dbpedia(actor=preferences[1], grades=preferences[3])
         # Extract relevant information from the queries results
         main_list = process_json_data(get_data_from_json(query_pref))
         reco_list1 = process_json_data(get_data_from_json(query_same_actor))
