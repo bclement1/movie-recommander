@@ -11,7 +11,7 @@ Le code est composé :
 
 La figure suivante détaille le principe de fonctionnement:
 
-[](./images/movie_recommender_principle.png)
+![](./images/movie_recommender_principle.png)
 
 Dans l'ordre :
 
@@ -27,7 +27,7 @@ Dans l'ordre :
 
 ### Page d'accueil
 
-[](./images/home_page.png)
+![](./images/home_page.png)
 
 Cette page recueille les préférences de l'utilisateur à travers quatre questions avec quatres réponses possibles : 
 
@@ -38,7 +38,7 @@ Cette page recueille les préférences de l'utilisateur à travers quatre questi
 
 ### Page d'affichage des films 
 
-[](./images/answer_page.png)
+![](./images/answer_page.png)
 
 Cette page montre des informations sur des films pouvant plaire à l'utilisateur. Le titre du film, sa durée et son résumé sont affichés dans des rectangles disposés en carrousel. L'utilisateur peut faire défiler les informations des films à l'aide de flèches sur les côtés. Il y a trois carrousels : 
 
