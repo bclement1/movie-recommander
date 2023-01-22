@@ -12,133 +12,149 @@
         <h1>Your Movie Recommender</h1>
     </header>
     <form method="post">
-        <div class="question-block"> <!-- Type de film -->
+        <div class="question-block"> <!-- Film type -->
             <p>What type of movie would you like to watch ?</p>
             <ul style="list-style: None;">
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q1" value="Action" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q1" value="Action"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Action
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q1" value="Horror" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q1" value="Horror"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Horror
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q1" value="Comedy" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q1" value="Comedy"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Comedy
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q1" value="Science-fiction" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q1" value="Science-fiction"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Science-fiction
                     </label>
                 </li>
             </ul>
         </div>
-        <div class="question-block"> <!-- Acteurs préférés -->
+        <div class="question-block"> <!-- Favorite actor -->
             <p>Which actor/actress is your favorite among the following?</p>
             <ul style="list-style: None;">
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q2" value="Harrison Ford" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q2" value="Harrison Ford"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Harrison Ford
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q2" value="Jennifer Lawrence" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q2" value="Jennifer Lawrence"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Jennifer Lawrence
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q2" value="Robin Williams" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q2" value="Robin Williams"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Robin Williams
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q2" value="Emilia Clarke" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q2" value="Emilia Clarke"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Emilia Clarke
                     </label>
                 </li>
             </ul>
         </div>
-        <div class="question-block"> <!-- Durée -->
+        <div class="question-block"> <!-- Duration -->
             <p>The movie shoudn't last more than?</p>
             <ul style="list-style: None;">
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q3" value="1" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q3" value="1"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         1 hour
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q3" value="2" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q3" value="2"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         2 hours
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q3" value="2.5" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q3" value="2.5"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         2 hours and a half
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q3" value="inf" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q3" value="inf"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         I'm fine with long movies
                     </label>
                 </li>
             </ul>
         </div>
-        <div class="question-block"> <!-- Durée -->
+        <div class="question-block"> <!-- Grades -->
             <p>Does applause reviews (the movie's grade) matter to you?</p>
             <ul style="list-style: None;">
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q4" value="A lot" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q4" value="A lot"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Yes, a lot!
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q4" value="Yes" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q4" value="Yes"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Good grades often mean great movies!
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q4" value="Not really" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q4" value="Not really"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         Not really, but I give it a look nonetheless.
                     </label>
                 </li>
                 <li>
                     <label>
-                        <img src="static/imgs/check.png" class="tick"/>
-                        <input type="radio" class="radio" name="Q4" value="inf" onclick="showTick(this); updateRequirements(this);" required>
+                        <img src="static/imgs/check.png" class="tick" />
+                        <input type="radio" class="radio" name="Q4" value="No"
+                            onclick="showTick(this); updateRequirements(this);" required>
                         No, I don't believe in grades.
                     </label>
                 </li>

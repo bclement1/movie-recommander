@@ -11,10 +11,13 @@ def query_dbpedia(
     category: Optional[str] = None,
     actor: Optional[str] = None,
     duration: Optional[str] = None,
+    grades: Optional[str] = None,
 ):
     """Query DBpedia using SparQL and return the result (JSON format)."""
     sparql = SPARQLWrapper("https://dbpedia.org/sparql")
-    query_txt = generate_query_txt(category=category, actor=actor, duration=duration)
+    query_txt = generate_query_txt(
+        category=category, actor=actor, duration=duration, grades=grades
+    )
     logging.info("SparQL query reads: \n{}".format(query_txt))
     sparql.setQuery(query_txt)
     sparql.setReturnFormat(JSON)
@@ -26,6 +29,7 @@ def generate_query_txt(
     category: Optional[str] = None,
     actor: Optional[str] = None,
     duration: Optional[str] = None,
+    grades: Optional[str] = None,
 ):
     """Return a SparQL query generated using the fields specified by the user."""
     if not category and not actor and not duration:
@@ -33,6 +37,8 @@ def generate_query_txt(
         raise ValueError
     # SELECT section
     query_txt = "SELECT DISTINCT ?film, ?abstract, ?name, ?run"
+    if grades in ["A lot", "Yes", "Not really"]:
+        query_txt += ", (count(distinct ?o) as ?links)"
     # WHERE section
     query_txt += "\nWHERE\n{\n"
     query_txt += "?film rdf:type dbo:Film . \n"
@@ -45,13 +51,18 @@ def generate_query_txt(
     if actor:
         actor = actor.replace(" ", "_")
         query_txt += "?film dbo:starring dbr:{} . \n".format(actor)
+    if grades in ["A lot", "Yes", "Not really"]:
+        query_txt += "?film dbo:wikiPageWikiLink ?o .\n"
     # Duration filter
     if duration:
         query_txt = query_time_filter(duration=duration, query_txt=query_txt)
     # Language filter
     query_txt += "FILTER langMatches(lang(?abstract), 'en')\n"
     # End of WHERE section
-    query_txt += "} LIMIT 10"
+    query_txt += "} "
+    if grades in ["A lot", "Yes", "Not really"]:
+        query_txt += "ORDER BY DESC(?links) \n"
+    query_txt += "LIMIT 10"
     return query_txt
 
 

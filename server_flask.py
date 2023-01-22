@@ -19,10 +19,13 @@ def home():
         preferences = list(request.form.values())
         # Make queries
         query_pref = query_dbpedia(
-            category=preferences[0], actor=preferences[1], duration=preferences[2]
+            category=preferences[0],
+            actor=preferences[1],
+            duration=preferences[2],
+            grades=preferences[3],
         )
-        query_same_cat = query_dbpedia(category=preferences[0])
-        query_same_actor = query_dbpedia(actor=preferences[1])
+        query_same_cat = query_dbpedia(category=preferences[0], grades=preferences[3])
+        query_same_actor = query_dbpedia(actor=preferences[1], grades=preferences[3])
         # Extract relevant information from the queries results
         main_list = process_json_data(get_data_from_json(query_pref))
         reco_list1 = process_json_data(get_data_from_json(query_same_actor))
@@ -46,7 +49,7 @@ def get_data_from_json(json: Dict):
         movie_title = result["name"]["value"]
         movie_runtime = convert_runtime(result["run"]["value"])
         data["data"].append(
-            {"title": movie_title, "abstract": movie_abstract, "img": None}
+            {"title": movie_title, "abstract": movie_abstract, "runtime": movie_runtime}
         )
     return data
 
@@ -82,7 +85,7 @@ def process_json_data(data_dict: dict):
             {
                 "title": clean_title,
                 "abstract": clean_abstract,
-                "img": movie_dict["img"],
+                "runtime": movie_dict["runtime"],
             }
         )
     return output_data_dict
