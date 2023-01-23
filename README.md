@@ -27,3 +27,5 @@ To start to use the movie recommender:
 ```
 python server_flask.py
 ```
+
+and then browse to: http://localhost:5000
