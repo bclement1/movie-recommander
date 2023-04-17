@@ -1,5 +1,18 @@
 # Movie Recommender
 
+## Link to the original project
+
+This project was originally conducted for the class "Connaissances et Raisonnement" in the AI track of the "Cursus ingénieur" at CentraleSupélec. <br>
+The team was:
+<ul>
+<li>Nicolas Noblot (CentraleSupélec) </li>
+<li>Clément Boulay (CentraleSupélec)</li>
+</ul> 
+<br>
+The link to the original repository, with the history of commits, is the <a href="https://github.com/noblotni/movie_recommender">following</a>.
+<br>
+<br>
+
 ## Description
 
 A knowledge-based movie recommender using SPARQL and DBpedia.
